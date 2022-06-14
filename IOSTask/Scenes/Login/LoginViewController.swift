@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
         bindViewToLoginViewModel()
         bindingViewModelToView()
     }
+    
     func bindViewToLoginViewModel(){
         emailTextField.textPublisher.sink(receiveValue: { [unowned self] text in
             loginViewModel.email.send(text)
@@ -29,30 +30,22 @@ class LoginViewController: UIViewController {
             loginViewModel.password.send(text)
         }).store(in: &bindings)
     }
+    
     func bindingViewModelToView(){
-        loginViewModel.validationResult.sink { completion in
-            print(completion.self)
-        } receiveValue: { loggedIn  in
-            print(loggedIn)
-        }.store(in: &bindings)
-
-//        loginViewModel.validationResult.sink { [unowned self] completion in
-//            switch completion{
-//            case .failure(let error):
-//                showAlert(title: "Alert", message: error.localizedDescription, buttonTitle: "Ok")
-//                print(error)
-//            case .finished:
-//                break
-//            }
-//        } receiveValue: { [unowned self] (loggedIn: Bool) in
-//            navigateToHome()
-//        }.store(in: &bindings)
+        loginViewModel.validationResult.sink(receiveCompletion: { _ in }, receiveValue: { [unowned self] value in
+            showAlert(title: "Alert", message: value, buttonTitle: "Ok")
+        }).store(in: &bindings)
+        loginViewModel.isLogged.sink(receiveCompletion: { _ in }, receiveValue: { [unowned self] value in
+            navigateToHome()
+        }).store(in: &bindings)
     }
+    
     func navigateToHome(){
         let storyboard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
     @IBAction func loginClicked(_ sender: UIButton) {
         loginViewModel.login()
     }

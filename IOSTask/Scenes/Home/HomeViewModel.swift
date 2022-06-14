@@ -11,11 +11,9 @@ import Combine
 class HomeViewModel{
     
     var searchText = CurrentValueSubject<String,Never>("a")
-    
     private var subscriptions = Set<AnyCancellable>()
     var photosArray = CurrentValueSubject<[Photo],Never>([Photo]())
 
-    
     func photoList() {
         searchText.sink { text in
             print(text)

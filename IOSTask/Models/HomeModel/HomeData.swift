@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Welcome6
-struct HomeModel :Codable{
+struct HomeData :Codable{
     let photos: Photos
     let stat: String
 }

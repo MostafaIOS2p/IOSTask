@@ -9,7 +9,7 @@ import Foundation
 import FirebaseAuth
 import Combine
 
-class LoginRepository{
+struct LoginRepository{
     
     func loginApi (email: String, password: String) -> Future<Bool,Error>{
         Future { promise in

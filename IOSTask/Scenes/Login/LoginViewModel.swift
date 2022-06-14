@@ -12,26 +12,24 @@ class LoginViewModel{
     
     var email = CurrentValueSubject<String,Never>("")
     var password = CurrentValueSubject<String,Never>("")
-
-    let validationResult = CurrentValueSubject<Bool,Error>(false)
-
+    let isLogged = PassthroughSubject<Bool,Never>()
+    let validationResult = PassthroughSubject<String,Error>()
     private var subscriptions = Set<AnyCancellable>()
     
     func login() {
         let message = validate()
         if message != nil {
-            validationResult.send(completion: .failure(ValidationError(message: message!)))
+            validationResult.send(ValidationError(message: message!).localizedDescription)
         } else {
             LoginRepository().loginApi(email: email.value, password: password.value).sink { [unowned self] completion in
                 switch completion{
                 case .failure(let error):
-                    validationResult.send(completion: .failure(error))
-                    print("error:",error.localizedDescription)
+                    validationResult.send(error.localizedDescription)
                 case .finished:
                     break
                 }
             } receiveValue: { [unowned self] (loggedIn: Bool) in
-                validationResult.send(loggedIn)
+                isLogged.send(loggedIn)
             }
             .store(in: &subscriptions)
         }

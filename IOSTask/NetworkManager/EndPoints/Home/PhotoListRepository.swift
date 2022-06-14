@@ -8,12 +8,9 @@
 import Foundation
 import Combine
 
-
-class PhotoListRepository {
+struct PhotoListRepository {
     
-    
-    
-    func searchPhotos(query: String) -> Future<HomeModel,Error>{
+    func searchPhotos(query: String) -> Future<HomeData,Error>{
         return ApiManager().apiCall(endPoint: PhotoListEndPoint.init(query: query))
     }
 }

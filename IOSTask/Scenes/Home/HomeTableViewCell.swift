@@ -15,4 +15,14 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var postDateLabel: UILabel!
     @IBOutlet weak var imageDescriptionLabel: UILabel!
     
+    var photoDetails: Photo!{
+        didSet{
+            autherNameLabel.text = photoDetails.ownername
+            imageTitleLabel.text = photoDetails.title
+            imageDescriptionLabel.text = photoDetails.description.content
+            let imageUrl = ConfigureImageURL().createImageUrl(photoData: photoDetails)
+            homeImageView.setImage(url: imageUrl)
+        }
+    }
+    
 }

@@ -13,14 +13,20 @@ struct PhotoListEndPoint: BaseEndPointProtocol {
     var parameters: [String : Any]?
     
     init(query: String) {
-        parameters = [:]
+            parameters = ["method":"flickr.photos.search",
+                          "api_key":"4f0b01ff599ad962cdacf3dbcb791b2b",
+                          "format":"json",
+                          "nojsoncallback":"1",
+                          "extras":"description,owner_name,date_taken",
+                          "text":query,
+                          "per_page":"10"]
     }
     
     var baseUrl: String{
         return Links.development
     }
     var path: String {
-        return "rest/?method=flickr.photos.search&api_key=4f0b01ff599ad962cdacf3dbcb791b2b&format=json&nojsoncallback=1&extras=description,owner_name,date_taken&text=H&per_page=10"
+        return "rest/"
     }
     var headers: [String : String] {
         return [:]

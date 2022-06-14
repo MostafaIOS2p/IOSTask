@@ -25,10 +25,9 @@
 		C62582CE28574FB3006B088E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62582CD28574FB3006B088E /* HomeViewController.swift */; };
 		C62582D028574FC1006B088E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62582CF28574FC1006B088E /* HomeViewModel.swift */; };
 		C62582D328574FE8006B088E /* PhotoListEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62582D228574FE8006B088E /* PhotoListEndPoint.swift */; };
-		C62582D628575016006B088E /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62582D528575016006B088E /* HomeModel.swift */; };
+		C62582D628575016006B088E /* HomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62582D528575016006B088E /* HomeData.swift */; };
 		C62582DA28575DAE006B088E /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62582D928575DAE006B088E /* HomeTableViewCell.swift */; };
 		C62582DD285774FE006B088E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C62582DC285774FE006B088E /* FirebaseAuth */; };
-		C62582DF28577562006B088E /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62582DE28577562006B088E /* LoginModel.swift */; };
 		C62582E128577AA7006B088E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C62582E028577AA7006B088E /* GoogleService-Info.plist */; };
 		C62C0324285869C0009470D3 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62C0323285869C0009470D3 /* LoginRepository.swift */; };
 		C62C03262858887A009470D3 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62C03252858887A009470D3 /* ValidationError.swift */; };
@@ -39,6 +38,10 @@
 		C62C03342858E23D009470D3 /* HomeDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C62C03332858E23D009470D3 /* HomeDetails.storyboard */; };
 		C62C03362858E25B009470D3 /* HomeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62C03352858E25B009470D3 /* HomeDetailsViewController.swift */; };
 		C65DBA0C2857CBD400EC3F50 /* PhotoListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65DBA0B2857CBD400EC3F50 /* PhotoListRepository.swift */; };
+		C6BAB5AA285909C7000E3659 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BAB5A9285909C7000E3659 /* StringExtensions.swift */; };
+		C6BAB5AC285917C3000E3659 /* ConfigureImageURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BAB5AB285917C3000E3659 /* ConfigureImageURL.swift */; };
+		C6BAB5AE28592605000E3659 /* HomeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BAB5AD28592605000E3659 /* HomeDetailsViewModel.swift */; };
+		C6BAB5B028593802000E3659 /* SaveImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BAB5AF28593802000E3659 /* SaveImages.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,9 +64,8 @@
 		C62582CD28574FB3006B088E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C62582CF28574FC1006B088E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C62582D228574FE8006B088E /* PhotoListEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListEndPoint.swift; sourceTree = "<group>"; };
-		C62582D528575016006B088E /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		C62582D528575016006B088E /* HomeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeData.swift; sourceTree = "<group>"; };
 		C62582D928575DAE006B088E /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
-		C62582DE28577562006B088E /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		C62582E028577AA7006B088E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C62C0323285869C0009470D3 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
 		C62C03252858887A009470D3 /* ValidationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
@@ -74,6 +76,10 @@
 		C62C03332858E23D009470D3 /* HomeDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeDetails.storyboard; sourceTree = "<group>"; };
 		C62C03352858E25B009470D3 /* HomeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailsViewController.swift; sourceTree = "<group>"; };
 		C65DBA0B2857CBD400EC3F50 /* PhotoListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListRepository.swift; sourceTree = "<group>"; };
+		C6BAB5A9285909C7000E3659 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		C6BAB5AB285917C3000E3659 /* ConfigureImageURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureImageURL.swift; sourceTree = "<group>"; };
+		C6BAB5AD28592605000E3659 /* HomeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailsViewModel.swift; sourceTree = "<group>"; };
+		C6BAB5AF28593802000E3659 /* SaveImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveImages.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				C62582D42857500B006B088E /* HomeModel */,
-				C62582AD285746FC006B088E /* LoginModel */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -173,6 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				C62582C228574905006B088E /* ValidationManager */,
+				C6BAB5AB285917C3000E3659 /* ConfigureImageURL.swift */,
+				C6BAB5AF28593802000E3659 /* SaveImages.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -204,14 +211,6 @@
 				C62582D928575DAE006B088E /* HomeTableViewCell.swift */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		C62582AD285746FC006B088E /* LoginModel */ = {
-			isa = PBXGroup;
-			children = (
-				C62582DE28577562006B088E /* LoginModel.swift */,
-			);
-			path = LoginModel;
 			sourceTree = "<group>";
 		};
 		C62582AE28574719006B088E /* EndPoints */ = {
@@ -254,7 +253,7 @@
 		C62582D42857500B006B088E /* HomeModel */ = {
 			isa = PBXGroup;
 			children = (
-				C62582D528575016006B088E /* HomeModel.swift */,
+				C62582D528575016006B088E /* HomeData.swift */,
 			);
 			path = HomeModel;
 			sourceTree = "<group>";
@@ -274,6 +273,7 @@
 				C62C032C2858A90C009470D3 /* UIViewControllerExtensions.swift */,
 				C62C032E2858D5DC009470D3 /* UIImageViewExtensions.swift */,
 				C62C03302858D79B009470D3 /* UIViewExtensions.swift */,
+				C6BAB5A9285909C7000E3659 /* StringExtensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -283,6 +283,7 @@
 			children = (
 				C62C03332858E23D009470D3 /* HomeDetails.storyboard */,
 				C62C03352858E25B009470D3 /* HomeDetailsViewController.swift */,
+				C6BAB5AD28592605000E3659 /* HomeDetailsViewModel.swift */,
 			);
 			path = HomeDetails;
 			sourceTree = "<group>";
@@ -369,11 +370,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6BAB5AA285909C7000E3659 /* StringExtensions.swift in Sources */,
+				C6BAB5B028593802000E3659 /* SaveImages.swift in Sources */,
 				C62C0324285869C0009470D3 /* LoginRepository.swift in Sources */,
 				C62582C428574910006B088E /* ValidationManager.swift in Sources */,
 				C62582BA28574813006B088E /* ApiRequestManger.swift in Sources */,
 				C62C03292858A070009470D3 /* UITextFieldExtensions.swift in Sources */,
 				C62C03312858D79B009470D3 /* UIViewExtensions.swift in Sources */,
+				C6BAB5AE28592605000E3659 /* HomeDetailsViewModel.swift in Sources */,
 				C62582CA28574FA3006B088E /* LoginViewModel.swift in Sources */,
 				C62582B828574813006B088E /* BaseEndPointProtocol.swift in Sources */,
 				C62582D328574FE8006B088E /* PhotoListEndPoint.swift in Sources */,
@@ -381,8 +385,8 @@
 				C62582C1285748B7006B088E /* Links.swift in Sources */,
 				C62C03262858887A009470D3 /* ValidationError.swift in Sources */,
 				C62582B928574813006B088E /* ParserHandler.swift in Sources */,
-				C62582DF28577562006B088E /* LoginModel.swift in Sources */,
-				C62582D628575016006B088E /* HomeModel.swift in Sources */,
+				C62582D628575016006B088E /* HomeData.swift in Sources */,
+				C6BAB5AC285917C3000E3659 /* ConfigureImageURL.swift in Sources */,
 				C625829128573CEE006B088E /* AppDelegate.swift in Sources */,
 				C62582D028574FC1006B088E /* HomeViewModel.swift in Sources */,
 				C62582B728574813006B088E /* ErrorHandlerProtocol.swift in Sources */,
