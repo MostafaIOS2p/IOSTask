@@ -20,7 +20,9 @@ class HomeTableViewCell: UITableViewCell {
             autherNameLabel.text = photoDetails.ownername
             imageTitleLabel.text = photoDetails.title
             imageDescriptionLabel.text = photoDetails.description.content
+            postDateLabel.text = changeDateFromatter(fromFromate: "yyyy-MM-dd HH:mm:ss", toFormate: "dd-MM-yyyy", selectedDate: photoDetails.datetaken)
             let imageUrl = ConfigureImageURL().createImageUrl(photoData: photoDetails)
+            homeImageView.image = nil
             homeImageView.setImage(url: imageUrl)
         }
     }

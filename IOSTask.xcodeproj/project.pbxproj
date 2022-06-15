@@ -37,6 +37,10 @@
 		C62C03312858D79B009470D3 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62C03302858D79B009470D3 /* UIViewExtensions.swift */; };
 		C62C03342858E23D009470D3 /* HomeDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C62C03332858E23D009470D3 /* HomeDetails.storyboard */; };
 		C62C03362858E25B009470D3 /* HomeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62C03352858E25B009470D3 /* HomeDetailsViewController.swift */; };
+		C633D3792859C25D009F6685 /* AnimationLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = C633D3782859C25D009F6685 /* AnimationLoading.swift */; };
+		C633D37C2859C67E009F6685 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C633D37B2859C67E009F6685 /* Lottie */; };
+		C633D3802859CA04009F6685 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C633D37F2859CA04009F6685 /* BaseViewController.swift */; };
+		C633D3822859DBBC009F6685 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C633D3812859DBBC009F6685 /* DateFormatter.swift */; };
 		C65DBA0C2857CBD400EC3F50 /* PhotoListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65DBA0B2857CBD400EC3F50 /* PhotoListRepository.swift */; };
 		C6BAB5AA285909C7000E3659 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BAB5A9285909C7000E3659 /* StringExtensions.swift */; };
 		C6BAB5AC285917C3000E3659 /* ConfigureImageURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BAB5AB285917C3000E3659 /* ConfigureImageURL.swift */; };
@@ -75,6 +79,9 @@
 		C62C03302858D79B009470D3 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		C62C03332858E23D009470D3 /* HomeDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeDetails.storyboard; sourceTree = "<group>"; };
 		C62C03352858E25B009470D3 /* HomeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailsViewController.swift; sourceTree = "<group>"; };
+		C633D3782859C25D009F6685 /* AnimationLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationLoading.swift; sourceTree = "<group>"; };
+		C633D37F2859CA04009F6685 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		C633D3812859DBBC009F6685 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		C65DBA0B2857CBD400EC3F50 /* PhotoListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListRepository.swift; sourceTree = "<group>"; };
 		C6BAB5A9285909C7000E3659 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		C6BAB5AB285917C3000E3659 /* ConfigureImageURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureImageURL.swift; sourceTree = "<group>"; };
@@ -89,6 +96,7 @@
 			files = (
 				C62582BD2857483E006B088E /* Alamofire in Frameworks */,
 				C62582DD285774FE006B088E /* FirebaseAuth in Frameworks */,
+				C633D37C2859C67E009F6685 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +166,7 @@
 		C62582A728573DBD006B088E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C633D37F2859CA04009F6685 /* BaseViewController.swift */,
 				C62C03322858E225009470D3 /* HomeDetails */,
 				C62582AB285746D7006B088E /* Login */,
 				C62582AC285746EC006B088E /* Home */,
@@ -180,6 +189,8 @@
 				C62582C228574905006B088E /* ValidationManager */,
 				C6BAB5AB285917C3000E3659 /* ConfigureImageURL.swift */,
 				C6BAB5AF28593802000E3659 /* SaveImages.swift */,
+				C633D3782859C25D009F6685 /* AnimationLoading.swift */,
+				C633D3812859DBBC009F6685 /* DateFormatter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -307,6 +318,7 @@
 			packageProductDependencies = (
 				C62582BC2857483E006B088E /* Alamofire */,
 				C62582DC285774FE006B088E /* FirebaseAuth */,
+				C633D37B2859C67E009F6685 /* Lottie */,
 			);
 			productName = IOSTask;
 			productReference = C625828D28573CEE006B088E /* IOSTask.app */;
@@ -339,6 +351,7 @@
 			packageReferences = (
 				C62582BB2857483E006B088E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				C62582DB285774FE006B088E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				C633D37A2859C67E009F6685 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = C625828E28573CEE006B088E /* Products */;
 			projectDirPath = "";
@@ -393,10 +406,13 @@
 				C62C032D2858A90C009470D3 /* UIViewControllerExtensions.swift in Sources */,
 				C62582C828574F95006B088E /* LoginViewController.swift in Sources */,
 				C62582C0285748B7006B088E /* Constants.swift in Sources */,
+				C633D3792859C25D009F6685 /* AnimationLoading.swift in Sources */,
+				C633D3822859DBBC009F6685 /* DateFormatter.swift in Sources */,
 				C65DBA0C2857CBD400EC3F50 /* PhotoListRepository.swift in Sources */,
 				C62582DA28575DAE006B088E /* HomeTableViewCell.swift in Sources */,
 				C62C032F2858D5DC009470D3 /* UIImageViewExtensions.swift in Sources */,
 				C62582CE28574FB3006B088E /* HomeViewController.swift in Sources */,
+				C633D3802859CA04009F6685 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,8 +559,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Login;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -571,8 +589,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Login;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -626,6 +646,14 @@
 				kind = branch;
 			};
 		};
+		C633D37A2859C67E009F6685 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -638,6 +666,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C62582DB285774FE006B088E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		C633D37B2859C67E009F6685 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C633D37A2859C67E009F6685 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

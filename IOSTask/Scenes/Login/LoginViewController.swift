@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -33,6 +33,7 @@ class LoginViewController: UIViewController {
     
     func bindingViewModelToView(){
         loginViewModel.validationResult.sink(receiveCompletion: { _ in }, receiveValue: { [unowned self] value in
+            AnimationLoading.shared.removeSpinner()
             showAlert(title: "Alert", message: value, buttonTitle: "Ok")
         }).store(in: &bindings)
         loginViewModel.isLogged.sink(receiveCompletion: { _ in }, receiveValue: { [unowned self] value in
@@ -47,6 +48,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginClicked(_ sender: UIButton) {
+        AnimationLoading.shared.showSpinner(onView:  (self.navigationController?.view)!)
         loginViewModel.login()
     }
 }

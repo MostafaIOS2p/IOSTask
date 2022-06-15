@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
 
     @IBOutlet weak var photosListTableView: UITableView!
 
@@ -20,31 +20,37 @@ class HomeViewController: UIViewController {
         prepareSearchBar()
         bindViewToHomeViewModel()
         bindingViewModelToHomeView()
+        homeViewModel.photoList()
+        photosListTableView.keyboardDismissMode = .onDrag
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationItem.hidesBackButton = true
-    }
-    
     func prepareSearchBar(){
         searchBar = UISearchBar()
         searchBar.sizeToFit()
         searchBar.placeholder = "Search Here"
         searchBar.showsCancelButton = true
+        searchBar.delegate = self
         navigationItem.titleView = searchBar
     }
     
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.searchBar.endEditing(true)
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.searchBar.endEditing(true)
+    }
     func bindViewToHomeViewModel(){
         searchBar.searchTextField.textPublisher
             .debounce(for: .milliseconds(1000), scheduler: RunLoop.main)
             .sink { [unowned self] text in
             homeViewModel.searchText.send(text.trimmingLeadingAndTrailingSpaces())
+                AnimationLoading.shared.showSpinner(onView: (self.navigationController?.view)!)
             homeViewModel.photoList()
         }.store(in: &bindings)
     }
     
     func bindingViewModelToHomeView(){
         homeViewModel.photosArray.sink { [unowned self] (_) in
+            AnimationLoading.shared.removeSpinner()
             self.photosListTableView.reloadData()
         }.store(in: &bindings)
     }

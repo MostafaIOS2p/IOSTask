@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - Welcome6
+// MARK: - HomeData
 struct HomeData :Codable{
     let photos: Photos
     let stat: String
