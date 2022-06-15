@@ -11,7 +11,6 @@ var imageCashe = NSCache<AnyObject, AnyObject>()
 
 
 extension UIImageView{
-    
    
     // set image from url
     func setImage(url: String){

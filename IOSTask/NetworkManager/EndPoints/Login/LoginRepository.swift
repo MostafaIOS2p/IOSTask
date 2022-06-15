@@ -11,13 +11,13 @@ import Combine
 
 struct LoginRepository{
     
-    func loginApi (email: String, password: String) -> Future<Bool,Error>{
+    func loginApi (email: String, password: String) -> Future<Void,Error>{
         Future { promise in
             Auth.auth().signIn(withEmail: email, password: password) {authResult, error in
                 if let error = error, authResult == nil {
                     promise(.failure(error))
                 }else{
-                    promise(.success(true))
+                    promise(.success(()))
                 }
             }
         }

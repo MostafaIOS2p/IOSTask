@@ -15,8 +15,8 @@ protocol ApiManagerProtocol {
 
 struct ApiManager: ApiManagerProtocol {
     
-    let parser = ParserHandler.init()
-    var errorHandler: ErrorHandlerProtocol!
+    private let parser = ParserHandler.init()
+    private var errorHandler: ErrorHandlerProtocol!
     
     func apiCall<T: Codable>(endPoint: BaseEndPointProtocol) -> Future<T, Error>  {
         let url = endPoint.url

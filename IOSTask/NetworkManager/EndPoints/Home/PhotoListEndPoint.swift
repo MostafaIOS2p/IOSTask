@@ -22,21 +22,26 @@ struct PhotoListEndPoint: BaseEndPointProtocol {
                           "per_page":"10"]
     }
     
-    var baseUrl: String{
+    var baseUrl: String {
         return Links.development
     }
+    
     var path: String {
         return "rest/"
     }
+    
     var headers: [String : String] {
         return [:]
     }
+    
     var httpMethod: HttpMethod{
         return.get
     }
-    var apiVersion: String{
+    
+    var apiVersion: String {
         return "1.0"
     }
+    
     var url: URL {
         return URL.init(string: baseUrl + path)!
     }

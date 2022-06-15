@@ -9,11 +9,11 @@ import Foundation
 
 struct ParserHandler {
     
-    func parserHandler<T: Codable>(parsefrom data:Data) -> Result<T,Error>{
-        do{
+    func parserHandler<T: Codable>(parsefrom data:Data) -> Result<T,Error> {
+        do {
             let object = try JSONDecoder().decode(T.self, from: data)
             return .success(object)
-        }catch{
+        } catch {
             return .failure(error)
        }
     }

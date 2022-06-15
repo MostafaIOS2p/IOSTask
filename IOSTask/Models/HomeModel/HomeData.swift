@@ -29,6 +29,7 @@ struct Photo :Codable{
     let datetaken: String
     let datetakengranularity: Int
     let datetakenunknown, ownername: String
+    
 }
 
 // MARK: - Description

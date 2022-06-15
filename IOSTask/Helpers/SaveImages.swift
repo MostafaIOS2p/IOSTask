@@ -8,24 +8,23 @@
 import Foundation
 import UIKit
 import Combine
+
 struct saveImages{
     
-    func saveImage(image: UIImage,filename: String) -> Future<Bool,Error> {
+    func saveImage(image: String,filename: String) -> Future<Bool,Error> {
         
         Future{ promis in
-            guard let data = image.jpegData(compressionQuality: 1) else {
-                return promis(.failure("image data error" as! Error))
+            
+                let pdfData = Data(base64Encoded: image)
+                let resourceDocPath = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).last! as URL
+                let pdfNameFromUrl = "\(filename)"
+                let actualPath = resourceDocPath.appendingPathComponent(pdfNameFromUrl)
+                print(actualPath)
+                do {
+                    try pdfData?.write(to: actualPath, options: .atomic)
+                } catch {
+                    
+                }
             }
-            guard let directory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) as NSURL else {
-                return promis(.failure("directory path error" as! Error))
-            }
-            do {
-                try data.write(to: directory.appendingPathComponent("\(filename).png")!)
-                return promis(.success(true))
-            } catch {
-                return promis(.failure(error.localizedDescription as! Error))
-            }
-        }
-
     }
 }

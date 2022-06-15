@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-class AnimationLoading{
+class AnimationLoading {
     
-    weak var vSpinner : UIView?
+    private weak var vSpinner : UIView?
     static let shared = AnimationLoading()
     
     func showSpinner(onView : UIView) {

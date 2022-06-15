@@ -9,12 +9,13 @@ import UIKit
 import Combine
 
 class HomeViewController: BaseViewController {
-
+    
     @IBOutlet weak var photosListTableView: UITableView!
-
-    let homeViewModel = HomeViewModel()
+    
+    private let homeViewModel = HomeViewModel()
     private var bindings = Set<AnyCancellable>()
-    lazy   var searchBar = UISearchBar()
+    lazy var searchBar = UISearchBar()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareSearchBar()
@@ -23,7 +24,8 @@ class HomeViewController: BaseViewController {
         homeViewModel.photoList()
         photosListTableView.keyboardDismissMode = .onDrag
     }
-    func prepareSearchBar(){
+    
+    func prepareSearchBar() {
         searchBar = UISearchBar()
         searchBar.sizeToFit()
         searchBar.placeholder = "Search Here"
@@ -35,17 +37,21 @@ class HomeViewController: BaseViewController {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.searchBar.endEditing(true)
     }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.searchBar.endEditing(true)
     }
+    
     func bindViewToHomeViewModel(){
         searchBar.searchTextField.textPublisher
             .debounce(for: .milliseconds(1000), scheduler: RunLoop.main)
             .sink { [unowned self] text in
-            homeViewModel.searchText.send(text.trimmingLeadingAndTrailingSpaces())
-                AnimationLoading.shared.showSpinner(onView: (self.navigationController?.view)!)
-            homeViewModel.photoList()
-        }.store(in: &bindings)
+                if text != "" {
+                    homeViewModel.searchText.send(text.trimmingLeadingAndTrailingSpaces())
+                    AnimationLoading.shared.showSpinner(onView: (self.navigationController?.view)!)
+                    homeViewModel.photoList()
+                }
+            }.store(in: &bindings)
     }
     
     func bindingViewModelToHomeView(){
@@ -61,7 +67,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return homeViewModel.photosArray.value.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
         cell.photoDetails = homeViewModel.photosArray.value[indexPath.row]
@@ -77,5 +83,5 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let nav = UINavigationController(rootViewController: vc)
         present(nav, animated: true, completion: nil)
     }
-
+    
 }

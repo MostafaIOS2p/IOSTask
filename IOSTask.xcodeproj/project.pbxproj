@@ -41,10 +41,9 @@
 		C633D37C2859C67E009F6685 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C633D37B2859C67E009F6685 /* Lottie */; };
 		C633D3802859CA04009F6685 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C633D37F2859CA04009F6685 /* BaseViewController.swift */; };
 		C633D3822859DBBC009F6685 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C633D3812859DBBC009F6685 /* DateFormatter.swift */; };
+		C633D3842859F47A009F6685 /* ConfigureImageURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C633D3832859F47A009F6685 /* ConfigureImageURL.swift */; };
 		C65DBA0C2857CBD400EC3F50 /* PhotoListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65DBA0B2857CBD400EC3F50 /* PhotoListRepository.swift */; };
 		C6BAB5AA285909C7000E3659 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BAB5A9285909C7000E3659 /* StringExtensions.swift */; };
-		C6BAB5AC285917C3000E3659 /* ConfigureImageURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BAB5AB285917C3000E3659 /* ConfigureImageURL.swift */; };
-		C6BAB5AE28592605000E3659 /* HomeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BAB5AD28592605000E3659 /* HomeDetailsViewModel.swift */; };
 		C6BAB5B028593802000E3659 /* SaveImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BAB5AF28593802000E3659 /* SaveImages.swift */; };
 /* End PBXBuildFile section */
 
@@ -82,10 +81,9 @@
 		C633D3782859C25D009F6685 /* AnimationLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationLoading.swift; sourceTree = "<group>"; };
 		C633D37F2859CA04009F6685 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C633D3812859DBBC009F6685 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		C633D3832859F47A009F6685 /* ConfigureImageURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigureImageURL.swift; sourceTree = "<group>"; };
 		C65DBA0B2857CBD400EC3F50 /* PhotoListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListRepository.swift; sourceTree = "<group>"; };
 		C6BAB5A9285909C7000E3659 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
-		C6BAB5AB285917C3000E3659 /* ConfigureImageURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureImageURL.swift; sourceTree = "<group>"; };
-		C6BAB5AD28592605000E3659 /* HomeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailsViewModel.swift; sourceTree = "<group>"; };
 		C6BAB5AF28593802000E3659 /* SaveImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveImages.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,10 +185,10 @@
 			isa = PBXGroup;
 			children = (
 				C62582C228574905006B088E /* ValidationManager */,
-				C6BAB5AB285917C3000E3659 /* ConfigureImageURL.swift */,
 				C6BAB5AF28593802000E3659 /* SaveImages.swift */,
 				C633D3782859C25D009F6685 /* AnimationLoading.swift */,
 				C633D3812859DBBC009F6685 /* DateFormatter.swift */,
+				C633D3832859F47A009F6685 /* ConfigureImageURL.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -294,7 +292,6 @@
 			children = (
 				C62C03332858E23D009470D3 /* HomeDetails.storyboard */,
 				C62C03352858E25B009470D3 /* HomeDetailsViewController.swift */,
-				C6BAB5AD28592605000E3659 /* HomeDetailsViewModel.swift */,
 			);
 			path = HomeDetails;
 			sourceTree = "<group>";
@@ -390,16 +387,15 @@
 				C62582BA28574813006B088E /* ApiRequestManger.swift in Sources */,
 				C62C03292858A070009470D3 /* UITextFieldExtensions.swift in Sources */,
 				C62C03312858D79B009470D3 /* UIViewExtensions.swift in Sources */,
-				C6BAB5AE28592605000E3659 /* HomeDetailsViewModel.swift in Sources */,
 				C62582CA28574FA3006B088E /* LoginViewModel.swift in Sources */,
 				C62582B828574813006B088E /* BaseEndPointProtocol.swift in Sources */,
+				C633D3842859F47A009F6685 /* ConfigureImageURL.swift in Sources */,
 				C62582D328574FE8006B088E /* PhotoListEndPoint.swift in Sources */,
 				C62C03362858E25B009470D3 /* HomeDetailsViewController.swift in Sources */,
 				C62582C1285748B7006B088E /* Links.swift in Sources */,
 				C62C03262858887A009470D3 /* ValidationError.swift in Sources */,
 				C62582B928574813006B088E /* ParserHandler.swift in Sources */,
 				C62582D628575016006B088E /* HomeData.swift in Sources */,
-				C6BAB5AC285917C3000E3659 /* ConfigureImageURL.swift in Sources */,
 				C625829128573CEE006B088E /* AppDelegate.swift in Sources */,
 				C62582D028574FC1006B088E /* HomeViewModel.swift in Sources */,
 				C62582B728574813006B088E /* ErrorHandlerProtocol.swift in Sources */,

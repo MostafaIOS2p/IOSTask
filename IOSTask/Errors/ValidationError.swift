@@ -7,7 +7,8 @@
 
 import Foundation
 
-class ValidationError : LocalizedError {
+struct ValidationError : LocalizedError {
+    
     var message: String
     
     init(message: String) {
@@ -17,6 +18,5 @@ class ValidationError : LocalizedError {
     public var errorDescription: String? {
         return NSLocalizedString(message, comment: "Invalid Email")
     }
-
     
 }

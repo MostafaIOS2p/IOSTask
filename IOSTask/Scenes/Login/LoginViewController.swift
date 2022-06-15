@@ -13,7 +13,7 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
 
-    let loginViewModel = LoginViewModel()
+    private let loginViewModel = LoginViewModel()
     private var bindings = Set<AnyCancellable>()
     
     override func viewDidLoad() {
@@ -32,12 +32,13 @@ class LoginViewController: BaseViewController {
     }
     
     func bindingViewModelToView(){
-        loginViewModel.validationResult.sink(receiveCompletion: { _ in }, receiveValue: { [unowned self] value in
+        loginViewModel.result.sink(receiveCompletion: { _ in }, receiveValue: { [unowned self] value in
             AnimationLoading.shared.removeSpinner()
-            showAlert(title: "Alert", message: value, buttonTitle: "Ok")
-        }).store(in: &bindings)
-        loginViewModel.isLogged.sink(receiveCompletion: { _ in }, receiveValue: { [unowned self] value in
-            navigateToHome()
+            if value == "" {
+                navigateToHome()
+            } else {
+                showAlert(title: "Alert", message: value, buttonTitle: "Ok")
+            }
         }).store(in: &bindings)
     }
     

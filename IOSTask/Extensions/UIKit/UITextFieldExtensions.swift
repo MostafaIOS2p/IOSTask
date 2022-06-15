@@ -10,7 +10,6 @@ import Combine
 
 extension UITextField{
     
-    
     @IBInspectable var padding: CGFloat {
         get {
             return self.padding
@@ -23,7 +22,6 @@ extension UITextField{
             self.rightViewMode = .always
         }
     }
-    
     
     var textPublisher: AnyPublisher<String, Never> {
         NotificationCenter.default
